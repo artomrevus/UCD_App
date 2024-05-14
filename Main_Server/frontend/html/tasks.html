@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Artom Revus">
+    <meta name="description" content="Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UCD Tasks</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/headerStyles.css" rel="stylesheet" >
+    <link href="../css/tasks.css" rel="stylesheet" >
+</head>
+
+<body>
+
+
+
+<!-- Header -->
+
+
+
+<header class="fixed-top" id="students-window-header">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-1 col-2">
+                <button class="main-logo-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">UCD</button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">UCD Navigation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="students.html">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tasks.html"><b>Tasks</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-8 col-sm-7 col-5"></div>
+
+            <div class="col-lg-1 col-2">
+                <div class="notifications">
+                    <a href="messages.html"><img src="../img/NotificationBell.png" class="notifications-trigger-img" alt="notifications image"></a>
+
+                    <div class="blinkingCircle" id="blinking-circle"></div>
+
+                    <div class="notificationsList" id="notifications-list">
+                        <div class="no-messages">No new messages yet</div> 
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-1">
+                <div class="user-icon-block">
+                    <div class="user-icon-img user-icon-img-unregistered" id="user-icon-img">
+                        <div class="user-icon-menu user-icon-menu-unregistered" id="user-icon-menu">
+                            <a href="../html/auth.html">LogIn / Register</a>
+                            <a href="" id="log-out-link">LogOut</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="user-name-label"><div id="current-user-name"></div></div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- Main -->
+
+
+
+<main>
+    <button class="add-btn" id="add-task-btn">Add task</button>
+
+    <div class="todo-list-containers">
+        <div class="todo-list-container" id="to-do-board">
+            Todo
+        </div>
+        <div class="todo-list-container" id="in-progress-board">
+            In Progress
+        </div>
+        <div class="todo-list-container" id="done-board">
+            Done
+        </div>
+    </div>
+</main>
+
+
+
+
+
+<!-- Forms -->
+
+
+
+<div class="blur-background" id="add-task-form-blur"></div>
+
+<form class="row g-3 fullscreen-form" id="add-task-form">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4>Add new task</h4>
+            <button type="button" class="btn-close" aria-label="Close" id="close-add-task-form-btn"></button>
+        </div>
+        <hr>
+    </div>
+    <div class="col-12">
+        <label for="input-task-name" class="form-label">Task name (header):</label>
+        <input type="text" class="form-control" id="task-name-input" placeholder="Click to start typing" aria-label="Task name">
+    </div>
+    <div class="col-12">
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" id="add-task-form-btn">Add task</button>
+        </div>
+    </div>
+</form>
+
+
+
+
+<!-- Alerts -->
+
+
+
+<div id="liveAlertPlaceholder"></div>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/header.js"></script>
+<script type="module" src="../js/tasks.js"></script>
+</body>
+
+</html>

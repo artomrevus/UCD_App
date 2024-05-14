@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Artom Revus">
+    <meta name="description" content="Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UCD Authorization</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/headerStyles.css" rel="stylesheet" >
+    <link href="../css/auth.css" rel="stylesheet" >
+</head>
+
+<body>
+
+
+
+<!-- Header -->
+
+
+
+<header class="fixed-top" id="students-window-header">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-1 col-2">
+                <button class="main-logo-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">UCD</button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">UCD Navigation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="students.html">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tasks.html">Tasks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-8 col-sm-7 col-5"></div>
+
+            <div class="col-lg-1 col-2">
+                <div class="notifications">
+                    <a href="messages.html"><img src="../img/NotificationBell.png" class="notifications-trigger-img" alt="notifications image"></a>
+
+                    <div class="blinkingCircle" id="blinking-circle"></div>
+
+                    <div class="notificationsList" id="notifications-list">
+                        <div class="no-messages">No new messages yet</div> 
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-1">
+                <div class="user-icon-block">
+                    <div class="user-icon-img user-icon-img-unregistered" id="user-icon-img">
+                        <div class="user-icon-menu user-icon-menu-unregistered" id="user-icon-menu">
+                            <a href="../html/auth.html">LogIn / Register</a>
+                            <a href="" id="log-out-link">LogOut</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="user-name-label"><div id="current-user-name"></div></div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main -->
+
+
+
+<main>
+
+    <div class="main-container" id="main-container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Sign Up</h1>
+                <input type="text" placeholder="Full Name" id="full-name-sign-up-input">
+                <input type="text" placeholder="Username" id="username-sign-up-input">
+                <input type="password" placeholder="Password" id="password-sign-up-input">
+                <input type="password" placeholder="Confirm Password" id="confirm-password-sign-up-input">
+                <select id="gender-sign-up-input">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <button type="button" id="sign-up-button">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <input type="text" placeholder="Username" id="username-sign-in-input">
+                <input type="password" placeholder="Password" id="password-sign-in-input">
+                <button type="button" id="sign-in-button">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Or Sign in </h1>
+                    <p>If you already have an account, click the button below</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Or Sign up</h1>
+                    <p>If you don't have an account yet, click the button below</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<div id="liveAlertPlaceholder"></div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/header.js"></script>
+<script type="module" src="../js/auth.js"></script>
+
+
+</body>
+
+</html>

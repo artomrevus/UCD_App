@@ -1,0 +1,185 @@
+body {
+    font-family: "Code Mono", monospace;
+}
+
+main {
+    padding: 120px 0;
+}
+
+
+.main-label-container {
+    text-align: left;
+    font-size: x-large;
+}
+
+
+.main-add-student-button-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+
+.add-student-button {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    background-image: url('../img/add-user.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* == Start == Student table styles == Start == */
+
+
+.students-table-div {
+    margin-top: 10px;
+    height: 500px;
+    overflow: auto;
+    border: var(--base-color) 3px solid;
+}
+
+#studentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+#studentsTable thead td {
+    position: sticky;
+    top: 0;
+    background-color: cornflowerblue;
+
+    color: white;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+#studentsTable td {
+    border: 1px solid var(--base-color);
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+    background-color: white;
+}
+
+.checkboxColumn {
+    width: 9%;
+}
+
+.groupColumn {
+    width: 10%;
+}
+
+.nameColumn {
+    width: 25%;
+}
+
+.genderColumn {
+    width: 10%;
+}
+
+.birthdayColumn {
+    width: 20%;
+}
+
+.statusColumn {
+    width: 10%;
+}
+
+.tableRow:hover td {
+    color: blue;
+    background-color: aliceblue;
+}
+
+#headerCheckbox {
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    width: 20px;
+}
+
+.statusCircleOnline, .statusCircleOffline  {
+    width: 20px;
+    aspect-ratio: 1;
+    background-size: cover;
+    clip-path: circle(50%);
+    border: none;
+    margin: 0 auto;
+}
+
+.statusCircleOnline {
+    background-color: green;
+}
+
+.statusCircleOffline {
+    background-color: darkgrey;
+}
+
+
+.editOptionButton {
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    background-image: url('../img/EditStudent.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.deleteOptionButton {
+    margin-left: 10%;
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: transparent;
+    background-image: url('../img/DeleteStudent.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* == End == Student table styles == End == */
+
+
+
+.fullscreen-form {
+    display: none;
+
+    position: fixed;
+    height: 75vh;
+    width: 70vw;
+    overflow: auto;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (height < 850px) {
+    .fullscreen-form {
+        top: 55%;
+        left: 50%;
+        transform: translate(-47.5%, -50%);
+    }
+}
+
+.blur-background {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--base-color);
+    opacity: 0.7;
+}
+

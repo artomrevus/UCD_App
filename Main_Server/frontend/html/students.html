@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Artom Revus">
+    <meta name="description" content="Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" href="../img/logo/favicon.ico">
+    <title>UCD Students</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/headerStyles.css" rel="stylesheet" >
+    <link href="../css/students.css" rel="stylesheet">
+
+    <link rel="manifest" crossorigin="use-credentials" href="../manifest.json">
+
+</head>
+
+<body>
+
+
+
+<!-- Header -->
+
+
+
+<header class="fixed-top" id="students-window-header">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-1 col-2">
+                <button class="main-logo-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">UCD</button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">UCD Navigation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="students.html"><b>Students</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tasks.html">Tasks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-8 col-sm-7 col-5"></div>
+
+            <div class="col-lg-1 col-2">
+                <div class="notifications">
+                    <a href="messages.html"><img src="../img/NotificationBell.png" class="notifications-trigger-img" alt="notifications image"></a>
+
+                    <div class="blinkingCircle" id="blinking-circle"></div>
+
+                    <div class="notificationsList" id="notifications-list">
+                        <div class="no-messages">No new messages yet</div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-1">
+                <div class="user-icon-block">
+                    <div class="user-icon-img user-icon-img-unregistered" id="user-icon-img">
+                        <div class="user-icon-menu user-icon-menu-unregistered" id="user-icon-menu">
+                            <a href="../html/auth.html">LogIn / Register</a>
+                            <a href="" id="log-out-link">LogOut</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="user-name-label"><div id="current-user-name"></div></div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main -->
+
+
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 main-label-container">Students</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 main-add-student-button-container">
+                <button type="button" class="add-student-button" id="addStudentButton" aria-label="addStudent"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="students-table-div">
+                    <table id="studentsTable">
+                        <thead>
+                        <tr>
+                            <td class="checkboxColumn">
+                                <input type="checkbox" id="headerCheckbox" aria-label="Checkbox">
+                            </td>
+                            <td class="groupColumn">Group</td>
+                            <td class="nameColumn">Name</td>
+                            <td class="genderColumn">Gender</td>
+                            <td class="birthdayColumn">Birthday</td>
+                            <td class="statusColumn">Status</td>
+                            <td class="optionsColumn">Options</td>
+                        </tr>
+                        </thead>
+                        <tbody id="students-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<!-- Forms -->
+
+
+
+<div class="blur-background" id="add-edit-students-form-blur"></div>
+
+<form class="row g-3 fullscreen-form" id="add-edit-students-form">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 id="add-edit-form-header-text"></h4>
+            <button type="button" class="btn-close" aria-label="Close" id="close-add-edit-student-form-button"></button>
+        </div>
+        <hr>
+    </div>
+    <input type="hidden" id="itemId">
+    <div class="col-12">
+        <label for="inputGroup" class="form-label">Group</label>
+        <select id="inputGroup" class="form-select">
+            <option value="" disabled selected>Select Group</option>
+            <option value="PZ-21">PZ-21</option>
+            <option value="PZ-22">PZ-22</option>
+            <option value="PZ-23">PZ-23</option>
+            <option value="PZ-24">PZ-24</option>
+            <option value="PZ-25">PZ-25</option>
+            <option value="PZ-26">PZ-26</option>
+            <option value="PZ-27">PZ-27</option>
+            <option value="PZ-28">PZ-28</option>
+        </select>
+        <div id="validation-inputGroup-feedback"></div>
+    </div>
+    <div class="col-md-6">
+        <label for="inputFirstName" class="form-label">First name</label>
+        <input type="text" class="form-control" id="inputFirstName" placeholder="Click to start typing" aria-label="First name">
+        <div id="validation-inputFirstName-feedback"></div>
+    </div>
+    <div class="col-md-6">
+        <label for="inputLastName" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="inputLastName" placeholder="Click to start typing" aria-label="Last name">
+        <div id="validation-inputLastName-feedback"></div>
+    </div>
+    <div class="col-12">
+        <label for="inputGender" class="form-label">Gender</label>
+        <select id="inputGender" class="form-select">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <div id="validation-inputGender-feedback"></div>
+    </div>
+    <div class="col-12">
+        <label for="inputBirthday" class="form-label">Birthday</label>
+        <input type="date" class="form-control" id="inputBirthday">
+        <div id="validation-inputBirthday-feedback"></div>
+    </div>
+    <div class="col-12">
+        <hr>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary me-2" id="cancel-add-edit-student-form-button">Cancel</button>
+            <button type="submit" class="btn btn-primary" id="create-student-button" hidden>Create</button>
+            <button type="submit" class="btn btn-primary" id="save-student-button" hidden>Save</button>
+        </div>
+    </div>
+</form>
+
+
+
+<!-- Modal windows -->
+
+
+
+<div class="modal" tabindex="-1" id="delete-students-table-row-modal" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="delete-row-modal-body-paragraph"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="delete-row-modal-ok-button">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/header.js"></script>
+<script type="module" src="../js/students.js"></script>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../sw.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration);
+        }).catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+        });
+    }
+</script>
+
+</body>
+
+</html>

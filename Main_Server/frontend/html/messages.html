@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Artom Revus">
+    <meta name="description" content="Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UCD Messages</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/headerStyles.css" rel="stylesheet" >
+    <link href="../css/messages.css" rel="stylesheet" >
+</head>
+
+<body>
+
+
+
+<!-- Header -->
+
+
+
+<header class="fixed-top" id="students-window-header">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-1 col-2">
+                <button class="main-logo-menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">UCD</button>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">UCD Navigation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="students.html">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tasks.html">Tasks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-8 col-sm-7 col-5"></div>
+
+            <div class="col-lg-1 col-2">
+                <div class="notifications">
+                    <a href="messages.html"><img src="../img/NotificationBell.png" class="notifications-trigger-img" alt="notifications image"></a>
+
+                    <div class="blinkingCircle" id="blinking-circle"></div>
+
+                    <div class="notificationsList" id="notifications-list">
+                        <div class="no-messages">No new messages yet</div> 
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-1">
+                <div class="user-icon-block">
+                    <div class="user-icon-img user-icon-img-unregistered" id="user-icon-img">
+                        <div class="user-icon-menu user-icon-menu-unregistered" id="user-icon-menu">
+                            <a href="../html/auth.html">LogIn / Register</a>
+                            <a href="" id="log-out-link">LogOut</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="user-name-label"><div id="current-user-name"></div></div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main -->
+
+
+
+<main>
+
+    <div class="main-page-label">Messages</div>
+
+    <div class="conversations-container">
+
+        <button type="button" class="create-new-conversation-btn" id="create-new-conversation-btn">New conversation</button>
+        
+        <div class="all-conversations-previews-container">
+            <div class="conversations-label">Conversations:</div> <hr>
+            <div class="conversations-previews" id="conversations-previews"> <!-- Conversations previews will be here --> </div>
+        </div>
+        
+        <div class="current-conversation-container" id="current-conversation-container">
+            <div class="current-conversation-messages" id="current-conversation-messages"> <!-- Messages will be here --> </div>
+            <input type="text" id="message-input" placeholder="Write a message...">
+            <button id="send-button">Send</button>
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+
+<!-- Modals -->
+
+
+
+
+<div class="create-conversation-blur" id="create-conversation-blur"></div>
+
+<div class="create-conversation-modal-container" id="create-conversation-modal-container">
+    <span class="close-btn" id="close-create-conversation-modal-btn">×</span>
+
+    <label for="conversation-name-input" class="text-input-label">Conversation name:</label>
+    <input type="text" class="text-input" id="conversation-name-input">
+
+    <div class="users-label">Users:</div> <hr>
+    <div class="all-users-container">
+        <div class="users-previews" id="users-previews"> <!-- Users will be here --> </div>
+    </div>
+</div> 
+
+<button type="button" class="create-new-conversation-btn" id="create-new-conversation-modal-btn">Create</button>
+<button type="button" class="create-new-conversation-btn" id="edit-conversation-modal-btn">Save</button>
+
+
+
+
+
+<!-- Alerts -->
+
+
+
+<div id="liveAlertPlaceholder"></div>
+
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/header.js"></script>
+<script type="module" src="../js/messages.js"></script>
+
+</body>
+
+</html>
