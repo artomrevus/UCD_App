@@ -9,20 +9,29 @@ self.addEventListener('install', function(event) {
             console.log('Opened cache', CACHE_NAME);
             return cache.addAll([
                 '/html/students.html',
-                '/html/dashboard.html',
                 '/html/tasks.html',
+                '/html/messages.html',
+                '/html/auth.html',
                 '/css/students.css',
+                '/css/tasks.css',
+                '/css/messages.css',
+                '/css/auth.css',
                 '/css/bootstrap.min.css',
                 '/css/headerStyles.css',
                 '/js/students.js',
+                '/js/tasks.js',
+                '/js/messages.js',
+                '/js/auth.js',
+                '/js/header.js',
                 '/js/bootstrap.bundle.min.js',
                 '/manifest.json',
-                '/img/UserIcon.png',
-                '/img/UserIcon2.png',
                 '/img/add-user.png',
                 '/img/DeleteStudent.png',
                 '/img/EditStudent.png',
                 '/img/NotificationBell.png',
+                '/img/unregister_profile_image.png',
+                '/img/saveIcon.png',
+                '/img/deleteIcon.png',
             ]);
         })
     );
