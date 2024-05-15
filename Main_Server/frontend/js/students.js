@@ -18,7 +18,7 @@ const birthdayValidationFeedbackContainer = document.querySelector('#validation-
 const deleteStudentTableRowModal = document.querySelector('#delete-students-table-row-modal');
 
 
-const UCD_SERVER_URL = "http://localhost:5220/";
+const UCD_SERVER_URL = "http://localhost:5002/";
 
 
 
