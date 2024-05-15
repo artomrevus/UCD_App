@@ -77,7 +77,7 @@ A website for collaborative work with your colleagues. The following features ar
         - Students page: http://localhost:5001/html/students.html
         - Tasks page: http://localhost:5001/html/tasks.html
         - Messages page: http://localhost:5001/html/messages.html
-        P.S. You can navigate throught pages by clicking UCD logo (left side of the header). 
+        - *P.S. You can navigate throught pages by clicking UCD logo (left side of the header).*
 
 ## Technologies
 - HTML
